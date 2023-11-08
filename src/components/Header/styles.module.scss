@@ -1,0 +1,129 @@
+@import "../../styles/variables.scss";
+
+.header__container {
+  position: relative;
+
+  .header__content {
+    .header__wrapper {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 1.5rem 1rem;
+      font-size: 16px;
+      font-weight: 300;
+
+      @media (max-width: 900px) {
+        padding: 1.5rem 0;
+      }
+
+      .header__logo {
+        @media(max-width: 900px){
+          margin-left: 1rem;
+        }
+      }
+
+      .mobile__menu__icons {
+        @media (min-width: 900px) {
+          display: none;
+        }
+
+        margin-right: 1rem;
+        
+        &.menu__opened {
+          position: absolute;
+          margin-right: unset;
+          z-index: 999;
+          right: 16px;
+          top: 30px;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  @media (max-width: 900px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    z-index: 9;
+    // top: 0;
+    top: -470%;
+    padding: 2rem 0 1rem;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: $white-100;
+  }
+
+  &.active {
+    @media (max-width: 900px) {
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      animation-name: show_anim;
+
+      @keyframes show_anim {
+        from {
+          top: -470%;
+          // transform: translateY(100%);
+          // display: none;
+        }
+
+        to {
+          top: 0;
+          // transform: translateY(0%);
+        }
+      }
+    }
+  }
+
+  &.disable {
+    @media (max-width: 900px) {
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      animation-name: disable_anim;
+
+      @keyframes disable_anim {
+        from {
+          top: 0;
+          // transform: translateY(100%);
+          // display: none;
+        }
+
+        to {
+          top: -470%;
+          // transform: translateY(0%);
+        }
+      }
+    }
+  }
+
+  .nav__logo {
+    @media (min-width: 900px) {
+      display: none;
+    }
+  }
+
+  .nav__item {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 1rem 0.5rem;
+    transition: color 0.3s ease;
+    color: $white-87;
+
+    &:hover {
+      color: $orange-100;
+    }
+
+    @media (max-width: 900px) {
+      color: $black-100;
+
+      &:hover {
+        color: $red-100;
+      }
+    }
+  }
+}
