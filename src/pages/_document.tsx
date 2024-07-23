@@ -25,7 +25,10 @@ export default class MyDocument extends Document {
 
           <meta property="og:type" content="website" />
           <meta property="og:locale" content="pt-BR" />
-          <meta property="og:url" content="https://rotadoboi.site" />
+          <meta
+            property="og:url"
+            content="https://casadecarnesrotadoboi.com.br/"
+          />
           <meta property="og:site_name" content="Rota do Boi" />
           <meta
             property="og:title"
@@ -51,6 +54,9 @@ export default class MyDocument extends Document {
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
+          <meta httpEquiv="cache-control" content="no-cache" />
+          <meta httpEquiv="expires" content="0" />
+          <meta httpEquiv="pragma" content="no-cache" />
         </Head>
         <body>
           <Main />
